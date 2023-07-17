@@ -1,0 +1,75 @@
+{% extends "base/base.html" %}
+{% block titulo %}
+<title>{{titulo}}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename = 'css/stilos.css') }}">
+{% endblock %}
+
+{% block body %}
+ 
+     
+    <section class="d-flex justify-content-center mb-5 col-md-6  col-sm-12" >
+    <div class="container  mt-2  "  id="containerprincipal">
+      <div class="d-flex justify-content-center mb-2">
+        <img src="{{ url_for('static', filename = 'img/CRP.png') }}" alt="" id="img">
+      </div>
+        <h1 class="text-center  justifys-center col-md-12" > Registrar usuario </h1>
+        <form action="" method="post" id="form" >
+          {% from "base/macro.html" import render_field %} 
+          <div class="form-container">
+
+            
+    
+              <div class="form-group mb-4" >
+                {{ render_field(form.nombre, class =" form_input", id="nombre", placeholder="", autocomplete="off") }}
+                <label for="nombre" class="form_label">Nombre</label>
+              </div>
+    
+              <div class="form-group mb-4" >
+                {{ render_field(form.apellido, class =" form_input", id="apellido", placeholder="", autocomplete="off") }}
+                <label for="nombre" class="form_label">Apellido</label>
+              </div>
+              
+                
+             
+              <div class="form-group mb-2">
+                {{ render_field(form.clave, class =" form_input", id="password", placeholder="") }}
+                <label for="password" class="form_label">Contraseña</label>
+              </div>
+    
+              <div class="form-group mb-4" >
+                {{ render_field(form.nivel, class =" form_input", id="nivel", placeholder="", autocomplete="off") }}
+                <label for="nivel" class="form_label">nivel</label>
+              </div>
+
+          
+              <div class="form-group mb-4" >
+                {{ render_field(form.ficha, class =" form_input", id="nivel", placeholder="", autocomplete="off") }}
+                <label for="ficha" class="form_label">ficha</label>
+              </div>
+          
+       <div>
+        {{ form.honeypot }}
+                        <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+                        <button  id="boton"  type="submit" class="btn btn-primary mt-3 mb-3 botons " > ingresar </button>
+       </div>
+      </div>
+      </form>
+      </div>
+      
+
+      
+</section>
+
+<footer>
+  <div >
+  <p class="font-weight-ligh"> ©Elaborado por digitalizacion industrial corimon C.A. 2023</p>
+</div>
+
+</footer>
+  
+{% endblock %}
+{% block script %}
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+{% endblock %}

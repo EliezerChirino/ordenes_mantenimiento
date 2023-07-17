@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&family=Poppins:wght@600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: #000;
+  }
+
+  main{
+    padding: auto;
+    padding: 10px;
+
+  }
+body{
+    width: 100%;
+    position: relative ;
+    padding-bottom: 3em;
+    min-height: 93vh;
+    background: #C9D6FF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 10px;
+    
+}
+.container h1{
+    font-size: 30px;
+    
+}
+section{
+    width: 100%;
+    background: transparent; 
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: white;
+    box-shadow: 10px 13px 37px 20px rgba( 255, 255, 255, 0.8);
+    
+}
+
+form .form-container{
+    margin-top: 2em;
+    display: grid;
+    gap: 2.5em;
+  
+ 
+}
+
+.form-group{
+    background: transparent;
+    position: relative;
+}
+
+.form_input{
+    width: 100%;
+    background: none;
+    font-size: 18px;
+    padding: .6em .3em;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #000;
+    
+    
+    
+}
+
+input{
+    
+    outline: none;
+}
+
+
+input:focus{
+    outline: none;
+    color: #000;
+    background: none;
+}
+label:focus{
+    outline: none;
+}
+label{
+    color: #080808;
+    font-size: 16px;
+    position: absolute;
+    left: 5px;
+    bottom: 0;
+    top: 10px;
+    transition: 0.5s ease-in-out all;
+    pointer-events: none;
+    background: none;
+}
+
+input:focus~label,
+input:valid~label{
+    top: -14px;
+    font-size: 12px;
+    color:#1f53c5;
+    background: none;
+}
+
+
+
+  .botons {
+    width: 100%;
+    background: #1f53c5;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+  }
+#img{
+    width: 300px;
+    margin-top: 0;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+
+
+
+ 
+#tiempostart{
+    display: inline-flex;
+    align-items: center;
+
+}
+#tiempoend{
+    display: inline-flex;
+    align-items: center;
+}
+
+
+
+ 
+
+
+
+
+
+footer{
+    padding: 1em 0;
+    position: absolute;
+    bottom: 0%;
+    background-color: transparent;
+    width: 100%;
+    text-align: center;
+    height: 70px;
+    font-size: smaller;
+    
+     }

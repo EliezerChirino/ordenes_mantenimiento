@@ -1,0 +1,93 @@
+{% extends "base/base.html" %}
+{% block titulo %}
+<title>{{titulo}}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename = 'css/style_3.css') }}">
+{% endblock %}
+{% block body %}
+  <main >
+  <section class="d-flex justify-content-center mb-4 col-md-6 col-sm-12  ">
+    <div class="container  mt-4  "   >
+      <div class="d-flex justify-content-center mb-2">
+        <img src="{{ url_for('static', filename = 'img/CRP.png') }}" alt="" id="img">
+      </div>
+      <form action="" method="post" id="form" >
+      {% from "base/macro.html" import render_field %} 
+      {{form.csrf_token}}
+      {{form.opts}}
+      
+      <div class="form-container ">
+    <!--Puesto de trabajo-->
+        
+    
+        <div class="form-group">
+        {{render_field(form.puestos_d_trabajo, id="puestos_d_trabajo", class="form_input mt-2")}}
+        <label for="puestos_d_trabajo" class="form_label" >Seleccione el puesto de trabajo</label>
+        </div>
+    
+            <!-- Ficha del tecnico-->
+          <div class="form-group ">
+                    {{ render_field(form.ficha_entrada, class ="form_input",  placeholder="", id="ficha") }}
+                    <label for="ficha" class="form_label " >  Ficha del técnico </label>
+          </div>
+
+
+<!---------------------------------------------Tiempo de ejecución---------------------------------------------------------------------------------------------------->
+    
+          <div class="form-group ">
+            {{ render_field(form.tiempo_real, class ="form_input", placeholder="", id="tiempo") }}
+            <label for="tiempo" class=" form_label" required>  Tiempo real </label>
+          </div>
+
+
+<!---------------------------------------------Checkbox---------------------------------------------------------------------------------->
+          
+        
+
+        <div class="form-group">
+          {{render_field(form.selec_notificacion, id="seleccion_notificacion", class="form_input mt-2")}}
+          <label for="seleccion_notificacion" class="form_label" >Seleccione el tipo de notificación</label>
+          </div>
+     
+
+<!----------------------------------------------------tiempo inicio y final--------------------------------------------------------------->
+
+<h4 class="mb-2">Fecha y hora  del trabajo</h4>
+    <div class="tiempo_container  ">
+    <div class="form-group d-flex justify-content-center align-item-center mb-2 text-center " >
+      {{ render_field(form.time_start, class="form-group tiempos ", id=tiempostart )}}
+      <label for="tiempostart" class="  text-center m-2"  >Iniciado </label>
+        
+      </div>
+      <div class=" tiempo form-group d-flex justify-content-center align-item-center mb-2 text-center " style="margin-right: -20px;">
+          {{ render_field(form.time_end, class="form-group tiempos ", id=tiempoend )}}
+          <label for="tiempostart" class=" text-center m-2"   >Terminado </label>
+        </div>
+      
+     </div>
+    
+        </div>
+        <!-- textarea-->
+        <div class=" form-group mb-2 mt-3 ">
+          <label for="comentario" class="text-ibody " required> <h4> Texto explicativo del proceso de ejecución del trabajo</h4></label>
+          {{render_field(form.texto, class="form-control", id="comentario", rows="5")}}
+        </div>
+      <div class="d-flex justify-content-center mt-2">
+      <button  type="submit" class="btn btn-primary botons" > Enviar </button>
+      </div>
+    </div>
+  </form>
+</div>
+</section>
+</main>
+
+<footer>
+  <div >
+  <p class="font-weight-lighr"> ©Elaborado por digitalizacion industrial corimon C.A. 2023</p>
+</div>
+</footer>
+{% endblock %}
+{% block script %}
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+{% endblock %}
